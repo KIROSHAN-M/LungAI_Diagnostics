@@ -4,6 +4,7 @@ import { Pill, Apple, Moon, Stethoscope, Heart, AlertTriangle, RotateCcw } from 
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { AnalysisData } from "@/components/AnalysisResults";
+import bgTreatment from "@/assets/bg-treatment.jpg";
 
 interface TreatmentPlan {
   medications: { name: string; instruction: string; frequency: string; duration: string }[];
