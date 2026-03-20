@@ -6,6 +6,7 @@ import XrayUpload from "@/components/XrayUpload";
 import AnalysisResults, { AnalysisData } from "@/components/AnalysisResults";
 import SampleXrays from "@/components/SampleXrays";
 import { Button } from "@/components/ui/button";
+import bgScan from "@/assets/bg-scan.jpg";
 
 const Scan = () => {
   const navigate = useNavigate();
