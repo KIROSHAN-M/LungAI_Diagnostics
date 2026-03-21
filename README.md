@@ -17,10 +17,6 @@
 - 🟢 Supabase
 - 🤖 Machine Learning Model
 
----
-
-## 📸 Preview
-![App Screenshot](./preview.png)
 
 ---
 
