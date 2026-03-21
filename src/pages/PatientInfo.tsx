@@ -49,6 +49,7 @@ const PatientInfo = () => {
   const validate = (): boolean => {
     const errs: typeof errors = {};
     if (!data.fullName.trim()) errs.fullName = "Name is required";
+    else if (isGibberish(data.fullName)) errs.fullName = "Please enter a valid name";
     const age = Number(data.age);
     if (!data.age || isNaN(age) || age < 0 || age > 150) errs.age = "Enter a valid age (0-150)";
     const h = Number(data.height);
@@ -57,6 +58,11 @@ const PatientInfo = () => {
     if (!data.weight || isNaN(w) || w < 1 || w > 500) errs.weight = "Enter valid weight (1-500 kg)";
     if (!data.gender) errs.gender = "Select gender";
     if (!data.currentProblem.trim()) errs.currentProblem = "Describe the problem";
+    else if (isGibberish(data.currentProblem)) errs.currentProblem = "Please enter a meaningful description";
+    if (data.symptoms.trim() && isGibberish(data.symptoms)) errs.symptoms = "Please enter valid symptoms";
+    if (data.bloodPressure.trim() && !/^\d{2,3}\/\d{2,3}/.test(data.bloodPressure.trim()) && isGibberish(data.bloodPressure))
+      errs.bloodPressure = "Enter valid blood pressure (e.g. 120/80 mmHg)";
+    if (data.knownAllergies.trim() && isGibberish(data.knownAllergies)) errs.knownAllergies = "Please enter valid allergy information";
     setErrors(errs);
     if (Object.keys(errs).length > 0) {
       playError();
