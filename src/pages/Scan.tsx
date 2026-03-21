@@ -6,7 +6,7 @@ import XrayUpload from "@/components/XrayUpload";
 import AnalysisResults, { AnalysisData } from "@/components/AnalysisResults";
 import SampleXrays from "@/components/SampleXrays";
 import ScanningAnimation from "@/components/ScanningAnimation";
-import StethoscopeAnimation from "@/components/StethoscopeAnimation";
+import PageOverlayAnimation from "@/components/PageOverlayAnimation";
 import { Button } from "@/components/ui/button";
 import { playClick, playSuccess, playError, playNavigate, playScan } from "@/hooks/useSoundEffects";
 import bgScan from "@/assets/bg-scan.jpg";
