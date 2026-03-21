@@ -1,27 +1,20 @@
-# 🫁 LungAI Diagnostics
+![React](https://img.shields.io/badge/Frontend-React-blue)
+![AI](https://img.shields.io/badge/AI-DeepLearning-red)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
-> AI-powered system for detecting lung diseases from chest X-rays using deep learning.
+# 🫁 LungAI Diagnostics  
 
----
-
-## 🚀 Features
-- 🧠 AI-based lung disease detection  
-- 📤 Upload chest X-ray images  
-- ⚡ Real-time prediction results  
-- 🔒 Secure authentication (Supabase)
+🚀 **AI-powered Lung Disease Detection System**  
+⚡ Fast • 🧠 Intelligent • 🔒 Secure  
 
 ---
 
-## 🧪 Tech Stack
-- ⚛️ React (Vite)
-- 🟢 Supabase
-- 🤖 Machine Learning Model
-
+## 🎥 Demo Preview
+![Demo](./preview.gif)
 
 ---
 
-## ⚙️ Installation
+## 💡 About the Project
+This project uses deep learning to analyze chest X-ray images and detect lung diseases with high accuracy. Designed with a modern web interface for real-time diagnosis.
 
-```bash
-npm install
-npm run dev
+---
