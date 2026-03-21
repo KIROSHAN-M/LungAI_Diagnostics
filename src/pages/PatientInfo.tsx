@@ -6,9 +6,25 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import StethoscopeAnimation from "@/components/StethoscopeAnimation";
+import PageOverlayAnimation from "@/components/PageOverlayAnimation";
 import { playClick, playType, playSuccess, playError, playNavigate } from "@/hooks/useSoundEffects";
 import bgPatient from "@/assets/bg-patient.jpg";
+
+// Gibberish detection: checks for too many consonant clusters, no vowels, or random chars
+const isGibberish = (text: string): boolean => {
+  const cleaned = text.trim().toLowerCase();
+  if (cleaned.length < 3) return false;
+  // Check vowel ratio — meaningful English text has ~35%+ vowels
+  const vowels = cleaned.replace(/[^aeiouy]/g, "").length;
+  const letters = cleaned.replace(/[^a-z]/g, "").length;
+  if (letters > 5 && vowels / letters < 0.15) return true;
+  // Check for long consonant clusters (5+ in a row)
+  if (/[^aeiouy\s\d.,;:!?'-]{5,}/i.test(cleaned)) return true;
+  // Check if mostly non-alpha (excluding spaces/punctuation)
+  const alpha = cleaned.replace(/[^a-z\s]/g, "").length;
+  if (cleaned.length > 5 && alpha / cleaned.length < 0.5) return true;
+  return false;
+};
 
 interface PatientData {
   fullName: string; age: string; height: string; weight: string; gender: string;
