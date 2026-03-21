@@ -194,6 +194,7 @@ const PatientInfo = () => {
               <div className="space-y-2">
                 <Label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Symptoms</Label>
                 <Textarea placeholder="Shortness of breath, fever, wheezing, fatigue..." value={data.symptoms} onChange={(e) => { update("symptoms", e.target.value); playType(); }} className="bg-background min-h-[80px] rounded-xl" />
+                {errors.symptoms && <p className="text-xs text-destructive">{errors.symptoms}</p>}
               </div>
 
               <ToggleGroup label="Smoking History" options={["Never", "Former", "Current"]} value={data.smokingHistory} onChange={(v) => update("smokingHistory", v)} />
