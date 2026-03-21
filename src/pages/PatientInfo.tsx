@@ -173,6 +173,7 @@ const PatientInfo = () => {
               <div className="space-y-2">
                 <Label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Blood Pressure</Label>
                 <Input placeholder="120/80 mmHg" value={data.bloodPressure} onChange={(e) => { update("bloodPressure", e.target.value); playType(); }} className="bg-background rounded-xl h-11" />
+                {errors.bloodPressure && <p className="text-xs text-destructive">{errors.bloodPressure}</p>}
               </div>
 
               <div className="space-y-2">
